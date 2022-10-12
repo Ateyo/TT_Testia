@@ -14,9 +14,9 @@
             </mat-option>
           </ng-container>
         </mat-select>
-        <mat-error *ngIf="damageForm.controls['defectType'].errors">{{
-          getErrorMessage()
-        }}</mat-error>
+        <mat-error *ngIf="damageForm.controls['defectType'].errors">
+          {{ getErrorMessage() }}
+        </mat-error>
       </mat-form-field>
       <mat-form-field appearance="outline">
         <mat-label>Entrez votre nom</mat-label>
@@ -27,9 +27,9 @@
           type="text"
           required
         />
-        <mat-error *ngIf="damageForm.controls['operatorName'].errors">{{
-          getErrorMessage()
-        }}</mat-error>
+        <mat-error *ngIf="damageForm.controls['operatorName'].errors">
+          {{ getErrorMessage() }}
+        </mat-error>
       </mat-form-field>
       <mat-form-field appearance="outline">
         <mat-label>Entrez un commentaire</mat-label>
