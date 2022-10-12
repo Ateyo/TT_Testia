@@ -14,7 +14,7 @@
           "error",
           {
             "type": "attribute",
-            "prefix": "fortil",
+            "prefix": "pmd",
             "style": "camelCase"
           }
         ],
@@ -22,7 +22,7 @@
           "error",
           {
             "type": "element",
-            "prefix": "fortil",
+            "prefix": "pmd",
             "style": "kebab-case"
           }
         ]

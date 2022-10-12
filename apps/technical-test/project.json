@@ -2,7 +2,7 @@
   "projectType": "application",
   "root": "apps/technical-test",
   "sourceRoot": "apps/technical-test/src",
-  "prefix": "fortil",
+  "prefix": "pmd",
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
