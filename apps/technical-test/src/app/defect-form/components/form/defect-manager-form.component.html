@@ -1,0 +1,45 @@
+<mat-card>
+  <form [formGroup]="damageForm">
+    <div class="form-wrapper" fxLayout="row" fxLayoutAlign=" center">
+      <mat-form-field appearance="outline">
+        <mat-label>Type de défaut</mat-label>
+        <mat-select required formControlName="defectType">
+          <mat-option> Selectionnez un défaut </mat-option>
+          <ng-container *ngFor="let dType of damageTypes">
+            <mat-option [value]="dType.value">
+              {{ dType.label }}
+            </mat-option>
+          </ng-container>
+        </mat-select>
+        <mat-error *ngIf="damageForm.controls['defectType'].errors">{{
+          getErrorMessage()
+        }}</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Entrez votre nom</mat-label>
+        <input
+          matInput
+          placeholder="pat@example.com"
+          formControlName="operatorName"
+          type="text"
+          required
+        />
+        <mat-error *ngIf="damageForm.controls['operatorName'].errors">{{
+          getErrorMessage()
+        }}</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Entrez un commentaire</mat-label>
+        <textarea matInput rows="3"></textarea>
+      </mat-form-field>
+      <button
+        mat-raised-button
+        [disabled]="!damageForm.valid"
+        (click)="submitForm()"
+        color="accent"
+      >
+        Submit
+      </button>
+    </div>
+  </form>
+</mat-card>
