@@ -1,0 +1,56 @@
+<mat-card>
+  <form [formGroup]="damageForm">
+    <div>
+      <h1>Formulaire d'ajout défauts techniques</h1>
+    </div>
+    <div class="form-wrapper" fxLayout="column" fxLayoutAlign=" center">
+      <mat-form-field appearance="outline">
+        <mat-label>Type de défaut</mat-label>
+        <mat-select required formControlName="defectType">
+          <mat-option> Selectionnez un défaut </mat-option>
+          <ng-container *ngFor="let dType of damageTypes">
+            <mat-option [value]="dType.value">
+              {{ dType.label }}
+            </mat-option>
+          </ng-container>
+        </mat-select>
+        <mat-error *ngIf="damageForm.controls['defectType'].errors">{{
+          getErrorMessage()
+        }}</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Entrez votre nom</mat-label>
+        <input
+          matInput
+          placeholder="pat@example.com"
+          formControlName="operatorName"
+          type="text"
+          required
+        />
+        <mat-error *ngIf="damageForm.controls['operatorName'].errors">{{
+          getErrorMessage()
+        }}</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Entrez un commentaire</mat-label>
+        <textarea matInput rows="3"></textarea>
+      </mat-form-field>
+
+      <div
+        class="button-wrapper"
+        fxLayout="row"
+        fxLayoutAlign="space-around center"
+      >
+        <button mat-raised-button (click)="cancelForm()">Annuler</button>
+        <button
+          mat-raised-button
+          [disabled]="!damageForm.valid"
+          (click)="submitForm()"
+          color="accent"
+        >
+          Valider
+        </button>
+      </div>
+    </div>
+  </form>
+</mat-card>
