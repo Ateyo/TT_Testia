@@ -1,18 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
-@use '@angular/material' as mat;
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+html, body {
+  background: url(assets/img/triangle-mosaic.webp);
+  height: 100%;
+}
 
-$my-primary: mat.define-palette(mat.$indigo-palette, 500);
-$my-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+body {
+  color: rgba(0,0,0,0.7);
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  margin: 0;
+}
 
-// The "warn" palette is optional and defaults to red if not specified.
-$my-warn: mat.define-palette(mat.$red-palette);
+.container {
+  margin: auto;
+  max-width: 1440px;
+}
 
-html, body { height: 100%; background: url(assets/img/triangle-mosaic.webp);}
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+footer {
+  margin: 1.5rem 0;
+}
 
 .mat-card {
   background: rgba(255, 255, 255, 0.6);
+}
+
+h1 {
+  color: #3F51B5;
 }
