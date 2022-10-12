@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { DamageForm } from '@pmd/interfaces';
-import { catchError, tap } from 'rxjs';
+import { catchError, take, tap } from 'rxjs';
 
 import { DefectManagerService } from '../../shared/services/defect-manager.service';
 
@@ -17,10 +17,13 @@ export class DefectManagerPageComponent {
     private _defectManagerService: DefectManagerService
   ) {}
 
+  //either send post to api or send error snackbar
   onSubmit(newDamageForm: DamageForm) {
     this._defectManagerService
       .sendDamageForm(newDamageForm, new Date())
       .pipe(
+        // We are using the take(1) operator for getting only a single value and auto unsubscribe after that
+        take(1),
         catchError((error) => {
           console.error(error);
           this._snackBar.open(
