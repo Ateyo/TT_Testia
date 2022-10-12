@@ -14,7 +14,9 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@pmd/interfaces": ["apps/technical-test/src/app/shared/interfaces/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
