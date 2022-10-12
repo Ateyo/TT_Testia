@@ -43,6 +43,7 @@ export class DefectManagerFormComponent {
       },
     ];
   }
+
   getErrorMessage() {
     if (
       this.damageForm.controls['defectType'].hasError('required') ||
@@ -74,6 +75,10 @@ export class DefectManagerFormComponent {
     }
 
     this.newDamageForm.emit(this.damageForm.value);
+    this.damageForm.reset();
+  }
+
+  cancelForm() {
     this.damageForm.reset();
   }
 }

@@ -1,5 +1,6 @@
 import { TextFieldModule } from '@angular/cdk/text-field';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -23,7 +24,14 @@ const matModules = [
 ];
 
 @NgModule({
-  imports: [ReactiveFormsModule, CommonModule, FlexLayoutModule, ...matModules],
+  imports: [
+    ReactiveFormsModule,
+    CommonModule,
+    FlexLayoutModule,
+    HttpClientModule,
+    ...matModules,
+  ],
+  providers: [],
   exports: [ReactiveFormsModule, CommonModule, FlexLayoutModule, ...matModules],
 })
 export class SharedModule {}

@@ -2,7 +2,17 @@
 
 # Fortil
 
-This project was generated using [Nx](https://nx.dev).
+This project was generated using [Nx](https://nx.dev) by Fortil for a technical test for Testia.
+
+Made by Tom Gonzalez
+
+## a few commands
+
+    "start:frontend": start the web project,
+    "start:desktop": start the electron desktop project,
+    "build:frontend": build the technical-test app,
+    "build:desktop": build the technical-test-desktop app,
+    "package:desktop": package files to .exe
 
 <p style="text-align: center;"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="450"></p>
 

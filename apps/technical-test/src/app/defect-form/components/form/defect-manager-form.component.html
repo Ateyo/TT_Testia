@@ -1,6 +1,9 @@
 <mat-card>
   <form [formGroup]="damageForm">
-    <div class="form-wrapper" fxLayout="row" fxLayoutAlign=" center">
+    <div>
+      <h1>Formulaire d'ajout défauts techniques</h1>
+    </div>
+    <div class="form-wrapper" fxLayout="column" fxLayoutAlign=" center">
       <mat-form-field appearance="outline">
         <mat-label>Type de défaut</mat-label>
         <mat-select required formControlName="defectType">
@@ -32,14 +35,22 @@
         <mat-label>Entrez un commentaire</mat-label>
         <textarea matInput rows="3"></textarea>
       </mat-form-field>
-      <button
-        mat-raised-button
-        [disabled]="!damageForm.valid"
-        (click)="submitForm()"
-        color="accent"
+
+      <div
+        class="button-wrapper"
+        fxLayout="row"
+        fxLayoutAlign="space-around center"
       >
-        Submit
-      </button>
+        <button mat-raised-button (click)="cancelForm()">Annuler</button>
+        <button
+          mat-raised-button
+          [disabled]="!damageForm.valid"
+          (click)="submitForm()"
+          color="accent"
+        >
+          Valider
+        </button>
+      </div>
     </div>
   </form>
 </mat-card>
